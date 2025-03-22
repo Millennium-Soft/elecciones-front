@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { Usuario } from 'src/app/models/usuario';
 import Swal from 'sweetalert2';
+import { Auth, signInWithPopup, GoogleAuthProvider } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-login',
@@ -27,9 +28,17 @@ export class LoginComponent {
   constructor(
     public authService: AuthService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private auth: Auth
   ) {
     this.usuario = new Usuario();
+  }
+
+  loginGoogle() {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(this.auth, provider)
+      .then(result => console.log('Usuario autenticado:', result.user))
+      .catch(error => console.error(error));
   }
 
   ngOnInit() {

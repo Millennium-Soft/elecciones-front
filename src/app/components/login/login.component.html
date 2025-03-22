@@ -26,120 +26,12 @@
     <div class="card-body font-usco-gr">
       <div class="container">
         <form [formGroup]="formLogin">
-          <div class="row">
-            <div class="col">
-              <div class="form-group">
-                <label class="ml-1"
-                  >Usuario <span class="requerido">*</span></label
-                >
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <i class="fa-solid fa-user"></i>
-                    </div>
-                  </div>
-                  <input
-                    type="text"
-                    formControlName="usuario"
-                    class="form-control"
-                    placeholder="Documento de indentidad"
-                  />
-                </div>
-              </div>
-            </div>
-            <!--  <div class="col">
-              <mat-form-field class="example-full-width" appearance="outline">
-                <span matPrefix class="p-3"
-                  ><i class="fa-solid fa-user"></i
-                ></span>
-                <mat-label>Usuario</mat-label>
-                <input
-                  matInput
-                  formControlName="usuario"
-                  id="usuario"
-                  autocomplete="off"
-                />
-              </mat-form-field>
-            </div> -->
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="form-group">
-                <label class="ml-1"
-                  >Contraseña <span class="requerido">*</span></label
-                >
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <i class="fa-solid fa-lock"></i>
-                    </div>
-                  </div>
-                  <input
-                    class="form-control"
-                    formControlName="contrasenia"
-                    type="password"
-                    placeholder="Digite la clave"
-                    autocomplete="off"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--  <div class="row mt-2">
-            <div class="col">
-              <mat-form-field class="example-full-width" appearance="outline">
-                <span matPrefix class="p-3"
-                  ><i class="fa-solid fa-lock"></i
-                ></span>
-                <mat-label>Contraseña</mat-label>
-                <input
-                  matInput
-                  [type]="hide ? 'password' : 'text'"
-                  formControlName="contrasenia"
-                  type="password"
-                  name="contrasenia"
-                  placeholder="Digite la clave"
-                  autocomplete="off"
-                />
-                <button
-                  mat-icon-button
-                  matSuffix
-                  (click)="hide = !hide"
-                  [attr.aria-label]="'Hide password'"
-                  [attr.aria-pressed]="hide"
-                >
-                  <mat-icon>{{
-                    hide ? "visibility_off" : "visibility"
-                  }}</mat-icon>
-                </button>
-              </mat-form-field>
-            </div>
-          </div> -->
           <div class="row mt-2 mb-4 text-center">
             <div class="col">
-              <button
-                (click)="login()"
-                type="submit"
-                class="btn btn-usco-vt"
-                [disabled]="!formLogin.valid"
-              >
-                Ingresar
-                <span
-                  *ngIf="cargando"
-                  class="spinner-border spinner-border-sm"
-                  role="status"
-                  aria-hidden="true"
-                ></span>
+              <button (click)="loginGoogle()" class="google-btn">
+                <img src="assets/img/google.svg" alt="Google Logo" class="google-icon" />
+                Iniciar sesión con Google
               </button>
-            </div>
-          </div>
-          <div class="row mb-2 text-center">
-            <div class="col">
-              <a href="https://www.google.com.co/" target="_blank"
-                ><small class="font-usco-vt font-weight-bold"
-                  >Recuperar contraseña</small
-                ></a
-              >
             </div>
           </div>
           <div class="row text-center">
@@ -155,26 +47,4 @@
       </div>
     </div>
   </div>
-  <!--   <div class="row mt-4">
-    <div class="col text-center">
-      <button
-        class="btn btn-corhuila-v mr-2"
-        (click)="setColor('bg-usco-vt')"
-      >
-        General
-      </button>
-      <button
-        class="btn btn-corhuila-p-1 mr-2"
-        (click)="setColor('bg-corhuila-p-as-1')"
-      >
-        Principal 1
-      </button>
-      <button
-        class="btn btn-corhuila-p-2 mr-2"
-        (click)="setColor('bg-corhuila-p-as-2')"
-      >
-        Principal 2
-      </button>
-    </div>
-  </div> -->
 </div>

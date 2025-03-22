@@ -29,3 +29,26 @@
 .punteada {
   border-bottom: dashed 1px #ffffff;
 }
+.google-btn {
+
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #000;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.google-btn:hover {
+  background-color: #f1f1f1;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}

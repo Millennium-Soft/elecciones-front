@@ -8,6 +8,11 @@ import { MaterialModules } from './material.modules';
 
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 
+// Importaciones de Firebase
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -50,6 +55,7 @@ import { NgxPrintModule } from 'ngx-print';
 
 // Importa el idioma español de date-fns
 import { es } from 'date-fns/locale';
+import { environment } from 'src/environments/environment';
 
 // Registra el idioma español para Angular
 registerLocaleData(localeEs);
@@ -95,6 +101,9 @@ registerLocaleData(localeEs);
     ReactiveFormsModule,
     MaterialModules,
     NgxPrintModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)), // Inicializa Firebase
+    provideAuth(() => getAuth()), // Habilita Auth
+    provideFirestore(() => getFirestore()) // Habilita Firestore
   ],
   entryComponents: [
     ModalFormularioPersona,
