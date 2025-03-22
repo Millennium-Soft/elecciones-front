@@ -1,0 +1,19 @@
+<div id="particles-js" class="particles-container"></div>
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Reporte de Votos</h2>
+
+  <table class="table table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>Candidato</th>
+        <th>Votos Obtenidos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let candidato of resultados | keyvalue">
+        <td>{{ candidato.key }}</td>
+        <td>{{ candidato.value }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

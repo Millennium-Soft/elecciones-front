@@ -15,6 +15,8 @@
 }
 
 .header-usco-card {
+  background-image: url("/assets/img/banner.jpg");
+  background-size: cover;
   border-radius: 15px 15px 0px 0px;
 }
 
@@ -30,7 +32,6 @@
   border-bottom: dashed 1px #ffffff;
 }
 .google-btn {
-
   align-items: center;
   justify-content: center;
   background-color: #ffffff;
@@ -38,7 +39,7 @@
   border: 1px solid #ddd;
   padding: 10px 15px;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -51,4 +52,14 @@
   width: 20px;
   height: 20px;
   margin-right: 10px;
+}
+
+.particles-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
 }

@@ -1,49 +1,34 @@
+<div id="particles-js" class="particles-container"></div>
 <div class="content">
   <div class="card-login">
-    <div
-      class="card-header bg-usco-vt header-usco-card"
-      [ngClass]="selectedColor"
-    >
+    <div class="card-header header-usco-card">
       <div class="row text-center">
-        <div class="col" style="width: 400px;">
-          <img
-            title="USCO"
-            mat-card-image
-            src="assets/msoft.png"
-            style="width: 250px;"
-          />
-        </div>
-      </div>
-      <hr class="punteada" />
-      <div class="row text-center">
-        <div class="col">
-          <h6 class="font-weight-bold text-white">
-            Plantilla Sistema Información
-          </h6>
-        </div>
+        <div class="col" style="width: 360px; height: 180px"></div>
       </div>
     </div>
     <div class="card-body font-usco-gr">
       <div class="container">
-        <form [formGroup]="formLogin">
-          <div class="row mt-2 mb-4 text-center">
-            <div class="col">
-              <button (click)="loginGoogle()" class="google-btn">
-                <img src="assets/img/google.svg" alt="Google Logo" class="google-icon" />
-                Iniciar sesión con Google
-              </button>
-            </div>
+        <div class="row mt-2 mb-4 text-center">
+          <div class="col">
+            <button (click)="loginGoogle()" class="google-btn font-weight-bold">
+              <img
+                src="assets/img/google.svg"
+                alt="Google Logo"
+                class="google-icon"
+              />
+              Iniciar sesión con Google para votar
+            </button>
           </div>
-          <div class="row text-center">
-            <div class="col" style="width: 100px">
-              <small style="font-size: 12px"
-                ><b class="version"
-                  >© {{ today | date : "yyyy" }} Millennium-Soft - Versión 1</b
-                ></small
-              >
-            </div>
+        </div>
+        <div class="row text-center">
+          <div class="col" style="width: 100px">
+            <small style="font-size: 12px">
+              <b class="version">
+                © {{ anioActual | date : "yyyy" }} Millennium-Soft - Versión 1
+              </b>
+            </small>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>

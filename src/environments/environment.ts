@@ -1,6 +1,4 @@
 export const environment = {
-  production: false,
-  URL_BACKEND: 'http://localhost:8080/plantilla',
   firebase: {
     apiKey: 'AIzaSyDUfTBcm6O2T4oOrJcD5ELLLKDTV14nY2s',
     authDomain: 'elecciones-virtuales-msoft.firebaseapp.com',

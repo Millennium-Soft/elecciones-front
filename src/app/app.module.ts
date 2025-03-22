@@ -17,36 +17,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
-import { InicioComponent } from './components/inicio/inicio.component';
-import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FiltroSexoBiologicoPipe } from './pipes/filtro-sexo-biologico.pipe';
 import { FiltroEstratoPipe } from './pipes/filtro-estrato.pipe';
 import { FiltroMunicipioPipe } from './pipes/filtro-municipio.pipe';
-import {
-  PersonaComponent,
-  ModalFormularioPersona,
-} from './components/persona/persona.component';
-import {
-  InstitucionComponent,
-  ModalFormularioInstitucion,
-  ModalVistaInstitucion,
-} from './components/institucion/institucion.component';
-import { FiltroCampoAmplioPipe } from './pipes/filtro-campo-amplio.pipe';
-import { FiltroCampoDetalladoPipe } from './pipes/filtro-campo-detallado.pipe';
-import { FiltroCampoEspecificoPipe } from './pipes/filtro-campo-especifico.pipe';
-import { FiltroEntidadPipe } from './pipes/filtro-entidad.pipe';
-import { FiltroCuerpoColegiadoPipe } from './pipes/filtro-cuerpo-colegiado.pipe';
-import { FiltroEntidadExternaPipe } from './pipes/filtro-entidad-externa.pipe';
-import { FiltroMedioPipe } from './pipes/filtro-medio.pipe';
-import { FiltroDerogaPipe } from './pipes/filtro-deroga.pipe';
-import { FiltroEntidadInternaPipe } from './pipes/filtro-entidad-interna.pipe';
-import { FiltroNormaTipoPipe } from './pipes/filtro-norma-tipo.pipe';
-import { FiltroEstadoSniesPipe } from './pipes/filtro-estado-snies.pipe';
-import { FiltroNivelAcademicoPipe } from './pipes/filtro-nivel-academico.pipe';
-import { FiltroNivelFormacionPipe } from './pipes/filtro-nivel-formacion.pipe';
-import { FiltroModalidadPipe } from './pipes/filtro-modalidad.pipe';
-import { FiltroAreaConocimientoPipe } from './pipes/filtro-area-conocimiento.pipe';
-import { FiltroSedePipe } from './pipes/filtro-sede.pipe';
 import { EmailHidePipe } from './pipes/email-hide.pipe';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
@@ -56,6 +29,8 @@ import { NgxPrintModule } from 'ngx-print';
 // Importa el idioma español de date-fns
 import { es } from 'date-fns/locale';
 import { environment } from 'src/environments/environment';
+import { TarjetonComponent } from './components/tarjeton/tarjeton.component';
+import { ReporteVotosComponent } from './components/reporte-votos/reporte-votos.component';
 
 // Registra el idioma español para Angular
 registerLocaleData(localeEs);
@@ -64,33 +39,12 @@ registerLocaleData(localeEs);
   declarations: [
     AppComponent,
     LoginComponent,
-    InicioComponent,
-    NavbarComponent,
     FiltroSexoBiologicoPipe,
     FiltroEstratoPipe,
     FiltroMunicipioPipe,
-    PersonaComponent,
-    ModalFormularioPersona,
-    ModalFormularioInstitucion,
-    ModalVistaInstitucion,
-    InstitucionComponent,
-    FiltroCampoAmplioPipe,
-    FiltroCampoDetalladoPipe,
-    FiltroCampoEspecificoPipe,
-    FiltroEntidadPipe,
-    FiltroCuerpoColegiadoPipe,
-    FiltroEntidadExternaPipe,
-    FiltroMedioPipe,
-    FiltroDerogaPipe,
-    FiltroEntidadInternaPipe,
-    FiltroNormaTipoPipe,
-    FiltroEstadoSniesPipe,
-    FiltroNivelAcademicoPipe,
-    FiltroNivelFormacionPipe,
-    FiltroModalidadPipe,
-    FiltroAreaConocimientoPipe,
-    FiltroSedePipe,
     EmailHidePipe,
+    TarjetonComponent,
+    ReporteVotosComponent,
   ],
   imports: [
     BrowserModule,
@@ -103,12 +57,10 @@ registerLocaleData(localeEs);
     NgxPrintModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)), // Inicializa Firebase
     provideAuth(() => getAuth()), // Habilita Auth
-    provideFirestore(() => getFirestore()) // Habilita Firestore
+    provideFirestore(() => getFirestore()), // Habilita Firestore
   ],
   entryComponents: [
-    ModalFormularioPersona,
-    ModalFormularioInstitucion,
-    ModalVistaInstitucion,
+
   ],
   providers: [
     DatePipe,
